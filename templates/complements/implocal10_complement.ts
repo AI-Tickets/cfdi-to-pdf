@@ -1,5 +1,5 @@
 import { type XmlNodeInterface } from '@nodecfdi/cfdi-core/types';
-import { type TableCell } from 'pdfmake/interfaces.js';
+import { type ContentTable, type TableCell } from 'pdfmake/interfaces.js';
 import { formatCurrency, toNumber } from '../../src/utils/currency.js';
 
 const useImplocal10Complement = (
@@ -32,7 +32,7 @@ const useImplocal10Complement = (
   const trasladosLocales = impLocal10.searchNodes('implocal:TrasladosLocales');
   const retencionesLocales = impLocal10.searchNodes('implocal:RetencionesLocales');
 
-  const retencionesLocalesTable: TableCell = {
+  const retencionesLocalesTable: ContentTable = {
     table: {
       widths: ['40%', '20%', 'auto'],
       body: [
@@ -75,7 +75,7 @@ const useImplocal10Complement = (
     },
     layout: 'tableLayout',
   };
-  const trasladosLocalesTable: TableCell = {
+  const trasladosLocalesTable: ContentTable = {
     table: {
       widths: ['40%', '20%', 'auto'],
       body: [
